@@ -1,16 +1,16 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, Group
 
 class User(AbstractUser):
-    pass
+    picture=models.CharField(max_length=100, default='pic1')
+    theme=models.CharField(max_length=100, default='theme1')
+    phone=models.IntegerField(default=9119119111)
 
 
-# class Group(models.Model):
-#     name = models.CharField(max_length=100)
-#     picture=models.CharField(max_length=100)
+class MyGroup(Group):
+    picture=models.CharField(max_length=100, default='pic1')
+    announcement=models.CharField(max_length=100, default='This is a group')
 
-#     def __str__(self):
-#         return self.name
 
     
 # class User(models.Model):
